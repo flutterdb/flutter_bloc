@@ -2,6 +2,12 @@
 
 A new Flutter project.
 
+# Flutter_Bloc Install : 
+# https://pub.dev/packages/flutter_bloc/install
+
+# Reference Medium:
+https://medium.com/flutterdevs/flutter-bloc-for-state-management-using-dio-with-retrofit-ca877463634d
+
 ## Getting Started
 
 This project is a starting point for a Flutter application.
