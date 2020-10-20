@@ -68,6 +68,9 @@ class ThemeCubit extends Cubit<ThemeData> {
       foregroundColor: Colors.white,
     ),
     brightness: Brightness.light,
+    textTheme: TextTheme(
+      bodyText2: TextStyle(fontSize: 14.0, fontFamily: 'Hind', color: Colors.black),
+    ),
   );
 
   static final _darkTheme = ThemeData(
@@ -75,6 +78,9 @@ class ThemeCubit extends Cubit<ThemeData> {
       foregroundColor: Colors.black,
     ),
     brightness: Brightness.dark,
+    textTheme: TextTheme(
+      bodyText2: TextStyle(fontSize: 14.0, fontFamily: 'Hind', color: Colors.black),
+    ),
   );
 
   /// Toggles the current brightness between light and dark.

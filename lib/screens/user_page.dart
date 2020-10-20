@@ -68,8 +68,7 @@ class _UserPageState extends State<UserPage> {
                                         children: <Widget>[
                                           Text(
                                             LBL_USER_ID,
-                                            style: TextStyle(
-                                                fontWeight: FontWeight.bold),
+                                            style: Theme.of(context).textTheme.bodyText2,
                                           ),
                                           SizedBox(
                                             width: 8,
