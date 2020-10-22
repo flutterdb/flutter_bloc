@@ -2,8 +2,8 @@
 
 A Demo App in Flutter for Flutter_bloc.
 
-![Test Image 1](light.png)
-![Test Image 1](dark.png)
+![Test Image 1](light.png)      ![Test Image 1](dark.png)
+![Test Image 1](ss3.png)
 
 
 # Flutter_Bloc Install : 
