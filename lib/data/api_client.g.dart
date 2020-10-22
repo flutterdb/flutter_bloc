@@ -21,20 +21,33 @@ class _ApiClient implements ApiClient {
     const _extra = <String, dynamic>{};
     final queryParameters = <String, dynamic>{};
     final _data = <String, dynamic>{};
-    try{
-      final _result = await _dio.request<Map<String, dynamic>>('api/users?page=2',
-          queryParameters: queryParameters,
-          options: RequestOptions(
-              method: 'GET',
-              headers: <String, dynamic>{},
-              extra: _extra,
-              baseUrl: baseUrl),
-          data: _data);
-      final value = UserListResponse.fromJson(_result.data);
-      return value;
-    }
-    on DioError catch(dioError){
-      throw ServerError.withError(error: dioError);
-    }
+    final _result = await _dio.request<Map<String, dynamic>>('api/users?page=2',
+        queryParameters: queryParameters,
+        options: RequestOptions(
+            method: 'GET',
+            headers: <String, dynamic>{},
+            extra: _extra,
+            baseUrl: baseUrl),
+        data: _data);
+    final value = UserListResponse.fromJson(_result.data);
+    return value;
+  }
+
+  @override
+  Future<SingleUserData> fetchUserDetails(id) async {
+    ArgumentError.checkNotNull(id, 'id');
+    const _extra = <String, dynamic>{};
+    final queryParameters = <String, dynamic>{};
+    final _data = <String, dynamic>{};
+    final _result = await _dio.request<Map<String, dynamic>>('api/users/$id',
+        queryParameters: queryParameters,
+        options: RequestOptions(
+            method: 'GET',
+            headers: <String, dynamic>{},
+            extra: _extra,
+            baseUrl: baseUrl),
+        data: _data);
+    final value = SingleUserData.fromJson(_result.data);
+    return value;
   }
 }

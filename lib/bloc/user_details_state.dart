@@ -1,5 +1,4 @@
-
-import 'package:flutter_demo_bloc/models/user_list_resp.dart';
+import 'package:flutter_demo_bloc/models/single_user_data.dart';
 
 class UserDetailsState{}
 
@@ -8,8 +7,8 @@ class UserDetailsInitialState extends UserDetailsState{}
 class UserDetailsLoadingState extends UserDetailsState{}
 
 class UserDetailsLoadedState extends UserDetailsState{
-  UserListResponse userListResponse;
-  UserDetailsLoadedState(this.userListResponse);
+  SingleUserData singleUserData;
+  UserDetailsLoadedState(this.singleUserData);
 }
 
 class UserDetailsErrorState extends UserDetailsState{

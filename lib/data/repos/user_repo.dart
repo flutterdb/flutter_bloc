@@ -15,4 +15,7 @@ class UserRepository{
     return await ApiClient(Dio()).fetchUserList();
   }
 
+  Future<dynamic> getUserDetails(int id) async {
+    return await ApiClient(Dio()).fetchUserDetails(id);
+  }
 }

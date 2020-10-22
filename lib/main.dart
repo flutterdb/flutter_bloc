@@ -1,10 +1,12 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
-import 'package:flutter_demo_bloc/bloc.user_details/user_details_bloc.dart';
-import 'package:flutter_demo_bloc/bloc.user_details/user_details_event.dart';
-import 'package:flutter_demo_bloc/bloc.user_details/user_details_state.dart';
-import 'package:flutter_demo_bloc/screens/home_page.dart';
+import 'package:flutter_demo_bloc/bloc/user_details_bloc.dart';
+import 'package:flutter_demo_bloc/bloc/user_details_event.dart';
+import 'package:flutter_demo_bloc/screens/user_details_screen.dart';
 import 'package:flutter_demo_bloc/screens/user_page.dart';
+
+import 'bloc/user_list_bloc.dart';
+import 'bloc/user_list_event.dart';
 
 /// Custom [BlocObserver] which observes all bloc and cubit instances.
 class SimpleBlocObserver extends BlocObserver {
@@ -49,8 +51,19 @@ class MyApp extends StatelessWidget {
           return MaterialApp(
             theme: theme,
             debugShowCheckedModeBanner: false,
-            home: BlocProvider<UserDetailsBloc>(
-              create: (context) => UserDetailsBloc()..add(FetchUserDetailsEvent()), child: UserPage()
+            home: /*MultiBlocProvider(
+                providers: [
+                  BlocProvider<UserListBloc>(
+                      create: (context) => UserListBloc()..add(FetchUserListEvent()), child: UserPage()
+                  ),
+                  *//*BlocProvider<UserDetailsBloc>(
+                      create: (context) => UserDetailsBloc(), child: UserDetailsScreen()
+                  ),*//*
+                ],
+                child: UserPage()
+            ),*/
+            BlocProvider<UserListBloc>(
+              create: (context) => UserListBloc()..add(FetchUserListEvent()), child: UserPage()
             ),
           );
         },
